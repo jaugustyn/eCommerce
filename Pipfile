@@ -8,6 +8,10 @@ fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 pydantic = "*"
 dicttoxml = "*"
+python-jose = {extras = ["cryptography"], version = "*"}
+passlib = {extras = ["bcrypt"], version = "*"}
+python-multipart = "*"
+pydantic-settings = "*"
 
 [dev-packages]
 pytest = "*"
