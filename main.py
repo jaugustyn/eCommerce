@@ -10,7 +10,13 @@ A simple e-commerce platform with modules for:
 
 from fastapi import FastAPI
 
-from app.routers import users_router, products_router, cart_router, orders_router
+from app.routers import (
+    auth_router,
+    users_router,
+    products_router,
+    cart_router,
+    orders_router,
+)
 
 app = FastAPI(
     title="E-commerce API",
@@ -19,6 +25,7 @@ app = FastAPI(
 )
 
 # Include routers
+app.include_router(auth_router)
 app.include_router(users_router)
 app.include_router(products_router)
 app.include_router(cart_router)

@@ -1,18 +1,38 @@
 # E-commerce API - FastAPI
 
-Kompleksowa aplikacja e-commerce zbudowana z FastAPI z autoryzacją JWT i wsparciem Dockera.
+Aplikacja e-commerce zbudowana z FastAPI z autoryzacją JWT i wsparciem Dockera.
 
 ## Funkcjonalności
 
 - **Autoryzacja JWT/OAuth2** - Bezpieczna autentykacja z tokenami JWT
 - **Zarządzanie użytkownikami** - Rejestracja, logowanie, profile
-- **Produkty** - Pełny CRUD z filtrowaniem po kategoriach
-- **Kategorie** - Hierarchiczne kategorie produktów
+- **Produkty** - CRUD z filtrowaniem po kategoriach
+- **Kategorie** - Kategorie produktów
 - **Koszyk** - Zarządzanie koszykiem zakupowym
 - **Zamówienia** - Składanie zamówień z eksportem do XML
 - **Recenzje** - Oceny i opinie o produktach
 
+## Architektura
 
+Projekt wykorzystuje architekturę warstwową:
+
+```
+app/
+├── routers/      # Warstwa API - endpointy REST
+├── services/     # Warstwa logiki biznesowej  
+├── models/       # Modele danych (dataclasses)
+├── schemas/      # Schematy Pydantic (walidacja)
+├── database/     # Warstwa danych (in-memory)
+└── core/         # Konfiguracja, security
+```
+
+**Moduły:**
+- `users` - zarządzanie użytkownikami
+- `products` - zarządzanie produktami
+- `cart` - obsługa koszyka zakupowego
+- `orders` - zarządzanie zamówieniami (z XML export)
+- `categories` - kategorie produktów
+- `reviews` - recenzje produktów
 
 ## Instalacja
 
@@ -30,8 +50,7 @@ docker-compose up --build
 ## Dostęp
 
 - **API**: http://localhost:8000
-- **Swagger**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
+- **Dokumentacja Swagger**: http://localhost:8000/docs
 
 ## Testy
 
@@ -43,5 +62,5 @@ pipenv run pytest tests/ -v
 
 - FastAPI, Pydantic
 - python-jose (JWT), passlib + bcrypt
-- dicttoxml (XML export)
+- dicttoxml (eksport XML)
 - pytest, Docker
