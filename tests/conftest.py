@@ -49,4 +49,3 @@ def auth_client(client):
     client.headers["Authorization"] = f"Bearer {token}"
     client.test_user_id = user_id
     return client
-

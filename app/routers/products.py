@@ -30,7 +30,9 @@ async def create_product(product_data: ProductCreate):
 
 
 @router.get("/", response_model=List[ProductResponse])
-async def get_products(category: Optional[str] = Query(None, description="Filter by category")):
+async def get_products(
+    category: Optional[str] = Query(None, description="Filter by category")
+):
     """Get all products, optionally filtered by category."""
     if category:
         products = product_service.get_products_by_category(category)

@@ -2,7 +2,6 @@
 Unit tests for shopping cart management.
 """
 
-import pytest
 from fastapi.testclient import TestClient
 
 

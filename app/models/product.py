@@ -4,8 +4,6 @@ Product model for the e-commerce application.
 
 from dataclasses import dataclass, field
 from datetime import datetime
-from decimal import Decimal
-from typing import Optional
 
 
 @dataclass

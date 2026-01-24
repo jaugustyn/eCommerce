@@ -2,7 +2,6 @@
 Unit tests for user management.
 """
 
-import pytest
 from fastapi.testclient import TestClient
 
 

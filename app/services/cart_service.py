@@ -6,7 +6,6 @@ from typing import Optional
 
 from app.database.db import Database
 from app.models.cart import Cart, CartItem
-from app.models.product import Product
 
 
 class CartService:

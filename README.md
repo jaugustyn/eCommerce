@@ -1,40 +1,40 @@
 # E-commerce API - FastAPI
 
-Aplikacja e-commerce zbudowana z FastAPI z autoryzacją JWT i wsparciem Dockera.
+E-commerce application built with FastAPI featuring JWT authentication and Docker support.
 
-## Funkcjonalności
+## Features
 
-- **Autoryzacja JWT/OAuth2** - Bezpieczna autentykacja z tokenami JWT
-- **Zarządzanie użytkownikami** - Rejestracja, logowanie, profile
-- **Produkty** - CRUD z filtrowaniem po kategoriach
-- **Kategorie** - Kategorie produktów
-- **Koszyk** - Zarządzanie koszykiem zakupowym
-- **Zamówienia** - Składanie zamówień z eksportem do XML
-- **Recenzje** - Oceny i opinie o produktach
+- **JWT/OAuth2 Authentication** - Secure authentication with JWT tokens
+- **User Management** - Registration, login, profiles
+- **Products** - CRUD operations with category filtering
+- **Categories** - Product categories
+- **Shopping Cart** - Cart management
+- **Orders** - Order placement with XML export
+- **Reviews** - Product ratings and reviews
 
-## Architektura
+## Architecture
 
-Projekt wykorzystuje architekturę warstwową:
+The project uses a layered architecture:
 
 ```
 app/
-├── routers/      # Warstwa API - endpointy REST
-├── services/     # Warstwa logiki biznesowej  
-├── models/       # Modele danych (dataclasses)
-├── schemas/      # Schematy Pydantic (walidacja)
-├── database/     # Warstwa danych (in-memory)
-└── core/         # Konfiguracja, security
+├── routers/      # API layer - REST endpoints
+├── services/     # Business logic layer
+├── models/       # Data models (dataclasses)
+├── schemas/      # Pydantic schemas (validation)
+├── database/     # Data layer (in-memory)
+└── core/         # Configuration, security
 ```
 
-**Moduły:**
-- `users` - zarządzanie użytkownikami
-- `products` - zarządzanie produktami
-- `cart` - obsługa koszyka zakupowego
-- `orders` - zarządzanie zamówieniami (z XML export)
-- `categories` - kategorie produktów
-- `reviews` - recenzje produktów
+**Modules:**
+- `users` - user management
+- `products` - product management
+- `cart` - shopping cart handling
+- `orders` - order management (with XML export)
+- `categories` - product categories
+- `reviews` - product reviews
 
-## Instalacja
+## Installation
 
 ```bash
 pipenv install --dev
@@ -47,20 +47,20 @@ pipenv run uvicorn main:app --reload
 docker-compose up --build
 ```
 
-## Dostęp
+## Access
 
 - **API**: http://localhost:8000
-- **Dokumentacja Swagger**: http://localhost:8000/docs
+- **Swagger Documentation**: http://localhost:8000/docs
 
-## Testy
+## Tests
 
 ```bash
 pipenv run pytest tests/ -v
 ```
 
-## Technologie
+## Technologies
 
 - FastAPI, Pydantic
 - python-jose (JWT), passlib + bcrypt
-- dicttoxml (eksport XML)
+- dicttoxml (XML export)
 - pytest, Docker
