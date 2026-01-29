@@ -1,6 +1,6 @@
 # E-commerce API - FastAPI
 
-E-commerce application built with FastAPI featuring JWT authentication and Docker support.
+E-commerce application built with FastAPI featuring JWT authentication.
 
 ## Features
 
