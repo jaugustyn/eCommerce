@@ -41,12 +41,6 @@ pipenv install --dev
 pipenv run uvicorn main:app --reload
 ```
 
-## Docker
-
-```bash
-docker-compose up --build
-```
-
 ## Access
 
 - **API**: http://localhost:8000
